@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
@@ -81,7 +81,7 @@ function AnimatedRoutes() {
 }
 export function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ScrollToTop />
       <div className="flex min-h-screen w-full flex-col bg-white">
         <Navbar />
@@ -89,6 +89,6 @@ export function App() {
         <Footer />
         <WhatsAppFab />
       </div>
-    </BrowserRouter>);
+    </HashRouter>);
 
 }

@@ -1,6 +1,10 @@
 import React, { Children } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRightIcon, MessageCircleIcon, ChevronDownIcon } from 'lucide-react';
+import {
+  ArrowRightIcon,
+  MessageCircleIcon,
+  ChevronDownIcon } from
+'lucide-react';
 import { Button } from '../ui/Button';
 import { IMAGES, SITE, whatsappLink, WHATSAPP_DEFAULT } from '../../lib/site';
 import { STATS } from '../../lib/content';
@@ -33,11 +37,17 @@ export function Hero() {
     }
   };
   return (
-    <section className="relative flex min-h-[100svh] items-center overflow-hidden">
+    <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-brand-navy">
+      <img
+        src={IMAGES.hero}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full scale-110 object-cover opacity-35 blur-2xl" />
+      
       <motion.img
         src={IMAGES.hero}
         alt="An elegant Nigerian wedding celebration captured at golden hour"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-contain object-center"
         style={{
           y,
           scale
@@ -47,7 +57,7 @@ export function Hero() {
         style={{
           opacity: overlayOpacity
         }}
-        className="absolute inset-0 bg-gradient-to-b from-brand-navy/80 via-brand-navy/55 to-brand-navy/90"
+        className="absolute inset-0 bg-brand-navy/50"
         aria-hidden="true" />
       
 

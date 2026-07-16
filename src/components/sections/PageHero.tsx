@@ -22,25 +22,33 @@ export function PageHero({
   crumbs
 }: PageHeroProps) {
   return (
-    <section className="relative flex min-h-[62vh] items-end overflow-hidden pt-24">
+    <section className="relative flex min-h-[62vh] items-end overflow-hidden bg-brand-navy pt-24">
+      <img
+        src={image}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full scale-110 object-cover opacity-35 blur-2xl" />
+      
       <motion.img
         src={image}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-contain object-center"
         initial={{
-          scale: 1.12
+          opacity: 0,
+          scale: 0.96
         }}
         animate={{
+          opacity: 1,
           scale: 1
         }}
         transition={{
-          duration: 1.6,
+          duration: 1.1,
           ease: [0.22, 1, 0.36, 1]
         }} />
       
       <div
-        className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/70 to-brand-navy/30"
+        className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/75 to-brand-navy/35"
         aria-hidden="true" />
       
 
