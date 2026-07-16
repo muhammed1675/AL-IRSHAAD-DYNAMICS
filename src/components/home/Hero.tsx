@@ -2,12 +2,11 @@ import React, { Children } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import {
   ArrowRightIcon,
-  MessageCircleIcon,
-  ChevronDownIcon } from
+  ChevronDownIcon,
+  MessageCircleIcon } from
 'lucide-react';
 import { Button } from '../ui/Button';
 import { IMAGES, SITE, whatsappLink, WHATSAPP_DEFAULT } from '../../lib/site';
-import { STATS } from '../../lib/content';
 export function Hero() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 600], [0, 120]);
@@ -37,17 +36,11 @@ export function Hero() {
     }
   };
   return (
-    <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-brand-navy">
-      <img
-        src={IMAGES.hero}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full scale-110 object-cover opacity-35 blur-2xl" />
-      
+    <section className="relative flex min-h-[700px] items-end overflow-hidden bg-brand-navy sm:min-h-[100svh] sm:items-center">
       <motion.img
         src={IMAGES.hero}
         alt="An elegant Nigerian wedding celebration captured at golden hour"
-        className="absolute inset-0 h-full w-full object-contain object-center"
+        className="absolute inset-0 h-full w-full object-cover object-[60%_center] sm:object-center"
         style={{
           y,
           scale
@@ -57,11 +50,11 @@ export function Hero() {
         style={{
           opacity: overlayOpacity
         }}
-        className="absolute inset-0 bg-brand-navy/50"
+        className="absolute inset-0 bg-gradient-to-b from-brand-navy/80 via-brand-navy/52 to-brand-navy/95 sm:from-brand-navy/80 sm:via-brand-navy/52 sm:to-brand-navy/90"
         aria-hidden="true" />
       
 
-      <div className="relative mx-auto w-full max-w-content px-5 pt-28 pb-24 sm:px-8">
+      <div className="relative mx-auto w-full max-w-content px-5 pb-12 pt-28 sm:px-8 sm:pb-24">
         <motion.div
           variants={container}
           initial="hidden"
@@ -81,7 +74,7 @@ export function Hero() {
 
           <motion.h1
             variants={item}
-            className="mt-6 font-display text-[2.6rem] font-bold leading-[1.03] text-white text-balance sm:text-6xl lg:text-7xl">
+            className="mt-5 max-w-2xl font-display text-[2.5rem] font-bold leading-[1.06] text-white text-balance sm:mt-6 sm:text-6xl lg:text-7xl">
             
             Handle Your Memories{' '}
             <span className="text-brand-gold-soft">Professionally.</span>
@@ -89,45 +82,36 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
+            className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/80 sm:mt-6 sm:text-lg">
             
-            {SITE.name} is a premium media company crafting cinematic
-            photography, film, and live coverage — and seamless Hajj & Umrah
-            journeys — for the moments that matter most.
+            {SITE.name} brings cinematic photography, film, live coverage, and
+            trusted Hajj & Umrah travel to the moments that matter most.
           </motion.p>
 
           <motion.div
             variants={item}
-            className="mt-9 flex flex-col gap-4 sm:flex-row">
+            className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:gap-4">
             
             <Button
               as="a"
               href={whatsappLink(WHATSAPP_DEFAULT)}
               target="_blank"
               rel="noopener noreferrer"
-              size="lg">
+              size="lg"
+              className="w-full sm:w-auto">
               
               <MessageCircleIcon className="h-5 w-5" /> Book Now
             </Button>
-            <Button as="link" to="/services" variant="ghost" size="lg">
+            <Button
+              as="link"
+              to="/services"
+              variant="ghost"
+              size="lg"
+              className="w-full sm:w-auto">
+              
               Explore Services <ArrowRightIcon className="h-5 w-5" />
             </Button>
           </motion.div>
-
-          <motion.dl
-            variants={item}
-            className="mt-14 grid max-w-lg grid-cols-2 gap-6 sm:grid-cols-4">
-            
-            {STATS.map((s) =>
-            <div key={s.label}>
-                <dt className="sr-only">{s.label}</dt>
-                <dd className="font-display text-2xl font-bold text-white sm:text-3xl">
-                  {s.value}
-                </dd>
-                <p className="mt-1 text-xs text-white/60">{s.label}</p>
-              </div>
-            )}
-          </motion.dl>
         </motion.div>
       </div>
 

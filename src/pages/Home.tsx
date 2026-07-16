@@ -1,5 +1,6 @@
 import React from 'react';
 import { Hero } from '../components/home/Hero';
+import { StatsBand } from '../components/home/StatsBand';
 import { ClientsBand } from '../components/sections/ClientsBand';
 import { AboutPreview } from '../components/home/AboutPreview';
 import { ServicesSection } from '../components/home/ServicesSection';
@@ -11,6 +12,7 @@ export function Home() {
   return (
     <>
       <Hero />
+      <StatsBand />
       <ClientsBand />
       <AboutPreview />
       <ServicesSection />

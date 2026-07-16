@@ -10,7 +10,7 @@ export const SITE = {
   phoneRaw: '2348108441454',
   whatsappRaw: '2348108441454',
   email: 'hello@alirshaaddynamics.com',
-  address: 'Oyo State, Nigeria',
+  address: 'Media Suite, Central Business District, Abuja, Nigeria',
   hours: [
   { day: 'Monday – Friday', time: '9:00 AM – 6:00 PM' },
   { day: 'Saturday', time: '10:00 AM – 4:00 PM' },
