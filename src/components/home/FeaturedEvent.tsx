@@ -87,7 +87,7 @@ export function FeaturedEvent() {
               </span>
               <span className="flex items-center gap-2">
                 <MapPinIcon className="h-4 w-4 text-brand-green-light" />{' '}
-                International Conference Centre, Abuja
+                Oyo State, Nigeria
               </span>
             </div>
 
