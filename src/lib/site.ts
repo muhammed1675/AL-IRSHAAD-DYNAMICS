@@ -11,6 +11,7 @@ export const SITE = {
   whatsappRaw: '2348108441454',
   email: 'hello@alirshaaddynamics.com',
   address: 'Media Suite, Central Business District, Abuja, Nigeria',
+  mapLink: 'https://maps.app.goo.gl/WWemBnBFD21D6a678?g_st=ic',
   hours: [
   { day: 'Monday – Friday', time: '9:00 AM – 6:00 PM' },
   { day: 'Saturday', time: '10:00 AM – 4:00 PM' },
