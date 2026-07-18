@@ -1,6 +1,5 @@
-import React from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { WhatsAppFab } from './components/layout/WhatsAppFab';
@@ -9,79 +8,43 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
 import { Contact } from './pages/Contact';
-function PageWrapper({ children }: {children: React.ReactNode;}) {
+import { NotFound } from './pages/NotFound';
+
+function PageWrapper({ children }: { children: React.ReactNode }) {
+  const reduce = useReducedMotion();
   return (
     <motion.main
-      initial={{
-        opacity: 0
-      }}
-      animate={{
-        opacity: 1
-      }}
-      exit={{
-        opacity: 0
-      }}
-      transition={{
-        duration: 0.4,
-        ease: [0.22, 1, 0.36, 1]
-      }}>
-      
+      id="main"
+      tabIndex={-1}
+      initial={reduce ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={reduce ? undefined : { opacity: 0 }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+    >
       {children}
-    </motion.main>);
-
+    </motion.main>
+  );
 }
+
 function AnimatedRoutes() {
   const location = useLocation();
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route
-          path="/"
-          element={
-          <PageWrapper>
-              <Home />
-            </PageWrapper>
-          } />
-        
-        <Route
-          path="/about"
-          element={
-          <PageWrapper>
-              <About />
-            </PageWrapper>
-          } />
-        
-        <Route
-          path="/services"
-          element={
-          <PageWrapper>
-              <Services />
-            </PageWrapper>
-          } />
-        
-        <Route
-          path="/contact"
-          element={
-          <PageWrapper>
-              <Contact />
-            </PageWrapper>
-          } />
-        
-        <Route
-          path="*"
-          element={
-          <PageWrapper>
-              <Home />
-            </PageWrapper>
-          } />
-        
+        <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+        <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
+        <Route path="/services" element={<PageWrapper><Services /></PageWrapper>} />
+        <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+        <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
       </Routes>
-    </AnimatePresence>);
-
+    </AnimatePresence>
+  );
 }
+
 export function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
+      <a href="#main" className="skip-link">Skip to content</a>
       <ScrollToTop />
       <div className="flex min-h-screen w-full flex-col bg-white">
         <Navbar />
@@ -89,6 +52,6 @@ export function App() {
         <Footer />
         <WhatsAppFab />
       </div>
-    </HashRouter>);
-
+    </BrowserRouter>
+  );
 }

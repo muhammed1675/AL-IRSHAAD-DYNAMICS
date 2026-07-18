@@ -8,9 +8,11 @@ import { WhyChooseUs } from '../components/home/WhyChooseUs';
 import { FinalCTA } from '../components/sections/FinalCTA';
 import { IMAGES } from '../lib/site';
 import { VALUES, STATS } from '../lib/content';
+import { Seo } from '../components/seo/Seo';
 export function About() {
   return (
     <>
+      <Seo title="About Al-Irshaad Dynamics — Craft, Trust & Devotion to Your Story" description="A professional Nigerian media and travel company handling the country's most treasured moments with true craft. Learn about our mission, values, and team." path="/about" />
       <PageHero
         eyebrow="About us"
         title="Craft, trust, and devotion to your story."

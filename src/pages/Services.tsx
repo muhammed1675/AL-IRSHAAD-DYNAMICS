@@ -8,9 +8,11 @@ import { Button } from '../components/ui/Button';
 import { FinalCTA } from '../components/sections/FinalCTA';
 import { IMAGES, whatsappLink } from '../lib/site';
 import { SERVICES } from '../lib/content';
+import { Seo } from '../components/seo/Seo';
 export function Services() {
   return (
     <>
+      <Seo title="Services — Photography, Film, Live Coverage & Hajj Travel | Al-Irshaad Dynamics" description="Explore our services: professional photography, cinematic videography, live event coverage & streaming, event branding, business promotion, Hajj & Umrah travel, content-creation training, and news coverage." path="/services" />
       <PageHero
         eyebrow="Our services"
         title="Everything you need, under one trusted roof."

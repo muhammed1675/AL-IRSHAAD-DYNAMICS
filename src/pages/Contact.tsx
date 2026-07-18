@@ -6,10 +6,12 @@ import { ContactInfo } from '../components/contact/ContactInfo';
 import { FAQ } from '../components/contact/FAQ';
 import { FinalCTA } from '../components/sections/FinalCTA';
 import { IMAGES, SITE } from '../lib/site';
+import { Seo } from '../components/seo/Seo';
 export function Contact() {
   const mapQuery = encodeURIComponent(SITE.address);
   return (
     <>
+      <Seo title="Contact Al-Irshaad Dynamics — Book Photography, Film or Hajj Travel" description="Reach us on WhatsApp, phone, email, or through our contact form. Based in Abuja, Nigeria — we respond within one business day." path="/contact" />
       <PageHero
         eyebrow="Contact us"
         title="Let's start a conversation."

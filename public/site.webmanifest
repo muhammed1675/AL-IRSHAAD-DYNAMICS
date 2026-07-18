@@ -1,0 +1,12 @@
+{
+  "name": "Al-Irshaad Dynamics",
+  "short_name": "Al-Irshaad",
+  "description": "Premium Nigerian media house and travel company.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0F7A5C",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

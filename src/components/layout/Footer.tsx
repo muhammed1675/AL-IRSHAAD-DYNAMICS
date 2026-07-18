@@ -44,15 +44,20 @@ export function Footer() {
               journeys with a standard of care that lasts a lifetime.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {SITE.socials.map((s) =>
-              <a
-                key={s.label}
-                href={s.href}
-                className="rounded-full border border-white/15 px-3.5 py-1.5 text-xs font-medium text-white/70 transition-colors hover:border-brand-gold hover:text-brand-gold">
-                
-                  {s.label}
-                </a>
-              )}
+              {SITE.socials
+                .filter((s) => s.href && s.href !== '#')
+                .map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${SITE.name} on ${s.label}`}
+                    className="rounded-full border border-white/15 px-3.5 py-1.5 text-xs font-medium text-white/70 transition-colors hover:border-brand-gold hover:text-brand-gold focus:border-brand-gold"
+                  >
+                    {s.label}
+                  </a>
+                ))}
             </div>
           </div>
 
